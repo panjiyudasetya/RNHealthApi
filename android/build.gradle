@@ -1,23 +1,25 @@
-
 buildscript {
     repositories {
         jcenter()
+        google()
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.1'
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+    ext {
+        googlePlayServicesVersion = '16.0.1'
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -28,9 +30,17 @@ android {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+    google()
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+'
+    implementation "com.google.android.gms:play-services-base:${googlePlayServicesVersion}"
+    implementation "com.google.android.gms:play-services-fitness:${googlePlayServicesVersion}"
+    implementation "com.google.android.gms:play-services-auth:${googlePlayServicesVersion}"
 }
   
