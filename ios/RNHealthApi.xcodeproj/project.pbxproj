@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNHealthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */; };
+		4887639D22603DC000FA83EB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4887639C22603DC000FA83EB /* HealthKit.framework */; };
+		488763C42260827000FA83EB /* RNHealthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763C32260827000FA83EB /* RNHealthApi.swift */; };
+		488763C922608E1E00FA83EB /* HealthKitApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488763C822608E1E00FA83EB /* HealthKitApi.swift */; };
+		48C4D3972260E05D00C32ACE /* HKPermissionsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3962260E05D00C32ACE /* HKPermissionsApi.swift */; };
+		48C4D3A12260E0F600C32ACE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3A02260E0F600C32ACE /* Constants.swift */; };
+		48C4D3A32260E70100C32ACE /* HealthKitApi+StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3A22260E70100C32ACE /* HealthKitApi+StepCount.swift */; };
+		48C4D3A62260EBBE00C32ACE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3A52260EBBE00C32ACE /* Date.swift */; };
+		48C4D3A82260F1DE00C32ACE /* RNHealthApi+StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3A72260F1DE00C32ACE /* RNHealthApi+StepCount.swift */; };
+		48C4D3AA2260F5B400C32ACE /* HealthKitApi+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4D3A92260F5B400C32ACE /* HealthKitApi+Query.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +32,17 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNHealthApi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHealthApi.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNHealthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHealthApi.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHealthApi.m; sourceTree = "<group>"; };
+		4887639C22603DC000FA83EB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		488763C022607A3800FA83EB /* RNHealthApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNHealthApi.m; sourceTree = "<group>"; };
+		488763C32260827000FA83EB /* RNHealthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNHealthApi.swift; sourceTree = "<group>"; };
+		488763C6226089E700FA83EB /* RNHealthApi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNHealthApi-Bridging-Header.h"; sourceTree = "<group>"; };
+		488763C822608E1E00FA83EB /* HealthKitApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitApi.swift; sourceTree = "<group>"; };
+		48C4D3962260E05D00C32ACE /* HKPermissionsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKPermissionsApi.swift; sourceTree = "<group>"; };
+		48C4D3A02260E0F600C32ACE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		48C4D3A22260E70100C32ACE /* HealthKitApi+StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthKitApi+StepCount.swift"; sourceTree = "<group>"; };
+		48C4D3A52260EBBE00C32ACE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		48C4D3A72260F1DE00C32ACE /* RNHealthApi+StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RNHealthApi+StepCount.swift"; sourceTree = "<group>"; };
+		48C4D3A92260F5B400C32ACE /* HealthKitApi+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HealthKitApi+Query.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4887639D22603DC000FA83EB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,12 +65,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4887639B22603DC000FA83EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4887639C22603DC000FA83EB /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		488763C722608DCB00FA83EB /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				488763C822608E1E00FA83EB /* HealthKitApi.swift */,
+				48C4D3A92260F5B400C32ACE /* HealthKitApi+Query.swift */,
+				48C4D3A22260E70100C32ACE /* HealthKitApi+StepCount.swift */,
+				48C4D3962260E05D00C32ACE /* HKPermissionsApi.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		48C4D3A42260EB9D00C32ACE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				48C4D3A52260EBBE00C32ACE /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNHealthApi.h */,
-				B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */,
+				48C4D3A42260EB9D00C32ACE /* Extensions */,
+				488763C722608DCB00FA83EB /* HealthKit */,
+				48C4D3A02260E0F600C32ACE /* Constants.swift */,
+				488763C022607A3800FA83EB /* RNHealthApi.m */,
+				488763C32260827000FA83EB /* RNHealthApi.swift */,
+				48C4D3A72260F1DE00C32ACE /* RNHealthApi+StepCount.swift */,
+				488763C6226089E700FA83EB /* RNHealthApi-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				4887639B22603DC000FA83EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +138,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -112,7 +164,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNHealthApi.m in Sources */,
+				488763C42260827000FA83EB /* RNHealthApi.swift in Sources */,
+				48C4D3A62260EBBE00C32ACE /* Date.swift in Sources */,
+				48C4D3972260E05D00C32ACE /* HKPermissionsApi.swift in Sources */,
+				488763C922608E1E00FA83EB /* HealthKitApi.swift in Sources */,
+				48C4D3AA2260F5B400C32ACE /* HealthKitApi+Query.swift in Sources */,
+				48C4D3A32260E70100C32ACE /* HealthKitApi+StepCount.swift in Sources */,
+				48C4D3A12260E0F600C32ACE /* Constants.swift in Sources */,
+				48C4D3A82260F1DE00C32ACE /* RNHealthApi+StepCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,32 +262,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNHealthApi;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		58B511F11A9E6C8500147676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNHealthApi;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNHealthApi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNHealthApi;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNHealthApi-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
