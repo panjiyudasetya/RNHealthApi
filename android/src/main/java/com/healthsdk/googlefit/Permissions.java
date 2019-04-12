@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.android.gms.fitness.FitnessOptions;
 import com.google.android.gms.fitness.data.DataType;
-import com.healthsdk.Constant;
+import com.healthsdk.Constants;
 
 public class Permissions {
 
@@ -22,7 +22,7 @@ public class Permissions {
 
     private static void createFitnessOptions(@NonNull String sampleType,
                                       @NonNull FitnessOptions.Builder builder) {
-        if (sampleType.equals(Constant.STEP_COUNT)) {
+        if (sampleType.equals(Constants.STEP_COUNT)) {
             builder.addDataType(
                     DataType.TYPE_STEP_COUNT_DELTA,
                     FitnessOptions.ACCESS_READ
@@ -33,7 +33,7 @@ public class Permissions {
             return;
         }
 
-        if (sampleType.equals(Constant.DISTANCE_WALKING_OR_RUNNING)) {
+        if (sampleType.equals(Constants.DISTANCE_WALKING_OR_RUNNING)) {
             builder.addDataType(
                     DataType.TYPE_DISTANCE_DELTA,
                     FitnessOptions.ACCESS_READ
