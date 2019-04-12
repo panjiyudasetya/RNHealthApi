@@ -25,6 +25,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     private final HealthApi healthApi;
     private List<Pair<String, Promise>> permissionPairPromises;
 
+    @SuppressWarnings("WeakerAccess")// Public access required by react native
     public RNHealthApiModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.healthApi = new FitApi(reactContext);
@@ -34,7 +35,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == FitApi.FIT_PERMISSION_REQUEST_CODE) {
-            broadcastPermissionsResult(resultCode == Activity.RESULT_OK);
+            proceedPermissionPairPromises(resultCode == Activity.RESULT_OK);
         }
     }
 
@@ -55,6 +56,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     }
 
     @ReactMethod
+    @SuppressWarnings("unused")// Used by react native
     public void hasPermissionsFor(ReadableArray dataTypes, Promise promise) {
         if (healthApi.hasPermissionsFor(getPermissions(dataTypes))) {
             promise.resolve(true);
@@ -64,24 +66,26 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     }
 
     @ReactMethod
+    @SuppressWarnings("unused")// Used by react native
     public void askPermissionFor(ReadableArray dataTypes, final Promise promise) {
-        // For certain Health services, permission result will be delivered through Android intent
-        // For example, Fitness API. That's why we need to implement {@link ActivityEventListener}.
+        // For certain Health services, permission result will be delivered through Android intent. For example,
+        // Fitness API. That's why we need to implement {@link ActivityEventListener#onActivityResult}.
         permissionPairPromises.add(Pair.create(healthApi.getName(), promise));
         healthApi.askPermissionFor(getPermissions(dataTypes), new ConnectionResult() {
             @Override
             public void onSuccess(String... messages) {
-                promise.resolve("CONNECTED_TO_HEALTH_API");
+                proceedPermissionPairPromises(true);
             }
 
             @Override
             public void onError(ExceptionWithCode error) {
-                promise.reject("CONNECTION_TO_HEALTH_API_FAILED", error);
+                proceedPermissionPairPromises(false, error);
             }
         });
     }
 
     @ReactMethod
+    @SuppressWarnings("unused")// Used by react native
     public void getStepCountToday(final Promise promise) {
         healthApi.getStepCountToday(new HealthApi.Result<Integer>() {
             @Override
@@ -97,6 +101,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     }
 
     @ReactMethod
+    @SuppressWarnings("unused")// Used by react native
     public void disconnect(final Promise promise) {
         healthApi.disconnect(new ConnectionResult() {
             @Override
@@ -109,6 +114,23 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
                 promise.reject("DISCONNECTED_TO_HEALTH_API_FAILED", error);
             }
         });
+    }
+
+    private void proceedPermissionPairPromises(boolean isConnected, Exception... errors) {
+        Exception error = (errors == null || errors.length == 0) ? new HealthConnectionRefusedError() : errors[0];
+        List<Pair<String, Promise>> completedPromises = new ArrayList<>();
+        for (int i = 0; i< permissionPairPromises.size(); i++) {
+            Pair<String, Promise> promiseKeyValue = permissionPairPromises.get(i);
+            if (promiseKeyValue.first.equals(healthApi.getName())) {
+                completedPromises.add(promiseKeyValue);
+                if (isConnected) {
+                    promiseKeyValue.second.resolve("CONNECTED_TO_HEALTH_API");
+                } else {
+                    promiseKeyValue.second.reject("REQUEST_CONNECTION_TO_HEALTH_API_FAILED", error);
+                }
+            }
+        }
+        permissionPairPromises.removeAll(completedPromises);
     }
 
     private String[] getPermissions(ReadableArray dataTypes) {
@@ -125,21 +147,5 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
             }
         }
         return converted.toArray(new String[]{});
-    }
-
-    private void broadcastPermissionsResult(boolean isConnected) {
-        List<Pair<String, Promise>> completedPromises = new ArrayList<>();
-        for (int i = 0; i< permissionPairPromises.size(); i++) {
-            Pair<String, Promise> promiseKeyValue = permissionPairPromises.get(i);
-            if (promiseKeyValue.first.equals(healthApi.getName())) {
-                completedPromises.add(promiseKeyValue);
-                if (isConnected) {
-                    promiseKeyValue.second.resolve("CONNECTED_TO_HEALTH_API");
-                } else {
-                    promiseKeyValue.second.reject("CONNECTION_TO_HEALTH_API_FAILED", new HealthConnectionRefusedError());
-                }
-            }
-        }
-        permissionPairPromises.removeAll(completedPromises);
     }
 }

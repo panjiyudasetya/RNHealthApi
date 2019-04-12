@@ -25,7 +25,7 @@ public abstract class HealthApi {
         void onError(ExceptionWithCode error);
     }
 
-    public void setHostActivity(@Nullable Activity activity) {
+    void setHostActivity(@Nullable Activity activity) {
         this.activity = activity;
     }
 

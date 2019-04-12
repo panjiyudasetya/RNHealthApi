@@ -1,7 +1,7 @@
 package com.healthsdk;
 
 public class Exceptions {
-    Exceptions() { }
+    private Exceptions() { }
 
     static class ExceptionWithCode extends Exception {
         final int code;
