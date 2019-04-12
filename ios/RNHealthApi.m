@@ -1,13 +1,29 @@
+//
+//  RNHealthApi.h
+//  RNHealthApi
+//
+//  Created by Panji Y. Wiwaha on 12/04/19.
+//  Copyright © 2019 Facebook. All rights reserved.
+//
 
-#import "RNHealthApi.h"
+#if __has_include("RCTBridgeModule.h")
+#import "RCTBridgeModule.h"
+#else
+#import <React/RCTBridgeModule.h>
+#endif
 
-@implementation RNHealthApi
+@interface RCT_EXTERN_MODULE(RNHealthApi, NSObject)
 
-- (dispatch_queue_t)methodQueue
-{
-    return dispatch_get_main_queue();
+RCT_EXTERN_METHOD(hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes, resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+
+RCT_EXTERN_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes, resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+
+RCT_EXTERN_METHOD(getStepCountToday:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+
+RCT_EXTERN_METHOD(disconnect:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+
++ (BOOL) requiresMainQueueSetup {
+    return false;
 }
-RCT_EXPORT_MODULE()
 
 @end
-  
