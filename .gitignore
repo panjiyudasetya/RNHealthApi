@@ -33,6 +33,7 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
+bin/
 build/
 .idea
 .gradle
