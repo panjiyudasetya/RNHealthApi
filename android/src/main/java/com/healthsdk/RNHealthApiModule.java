@@ -142,7 +142,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
         for (int i = 0; i< dataTypes.size(); i++) {
             String dataType = dataTypes.getString(i);
             if (dataType.equals(Constants.STEP_COUNT)
-                    || dataType.equals(Constants.DISTANCE_WALKING_OR_RUNNING)) {
+                    || dataType.equals(Constants.DISTANCE_WALKING_RUNNING)) {
                 converted.add(String.valueOf(dataType));
             }
         }

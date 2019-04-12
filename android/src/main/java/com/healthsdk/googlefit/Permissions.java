@@ -33,7 +33,7 @@ public class Permissions {
             return;
         }
 
-        if (sampleType.equals(Constants.DISTANCE_WALKING_OR_RUNNING)) {
+        if (sampleType.equals(Constants.DISTANCE_WALKING_RUNNING)) {
             builder.addDataType(
                     DataType.TYPE_DISTANCE_DELTA,
                     FitnessOptions.ACCESS_READ

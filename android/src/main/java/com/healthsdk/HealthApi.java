@@ -31,7 +31,12 @@ public abstract class HealthApi {
 
     public abstract String getName();
 
-    /** Define abstraction health services here, just in case your app require to integrate with multiple health services */
+    /**
+     * TODO: Define your abstraction health services here.
+     * Just in case you need more functionality, or you might need to integrate with another health services.
+     * For example, FitnessApi doesn't have sleep automatic measurement, so you can integrate with any wearable sdk
+     * or another health services.
+     */
     public abstract boolean hasPermissionsFor(@NonNull String[] dataTypes);
     public abstract void askPermissionFor(@NonNull String[] dataTypes, @NonNull ConnectionResult callback);
     public abstract void getStepCountToday(@NonNull Result<Integer> callback);
