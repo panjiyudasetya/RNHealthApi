@@ -39,12 +39,12 @@ class HealthKitApi: NSObject {
             return
         }
         
-        errorHandler(NSError(code:1, message:"Health data is not available!"))
+        errorHandler(NSError(domain:"Health data is not available!", code:1))
     }
     
-    @objc func disconnect(onSuccess completion: @escaping (_ message: String?) -> Void, onError errorHandler: @escaping (_ error: Error?) -> Void) {
+    @objc func disconnect(onSuccess completion: @escaping (_ message: String?) -> Void, onError errorHandler: @escaping (_ error: NSError?) -> Void) {
         // HealthKit doesn't have any functionality to unauthorize error. In this case, we simple call success completion handler
         
-        completion()
+        completion(nil)
     }
 }
