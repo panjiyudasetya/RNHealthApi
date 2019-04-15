@@ -20,8 +20,8 @@ class RNHealthApi: RCTBridge {
                 resolve(true)
             },
             onError:{
-                (error: NSError) in
-                reject("PERMISSIONS_ARE_NOT_GRANTED", "Permission are not granted", error)
+                (error: NSError?) in
+                reject("PERMISSIONS_ARE_NOT_GRANTED", "Permission are not granted", error!)
             })
     }
     
@@ -33,8 +33,8 @@ class RNHealthApi: RCTBridge {
                 resolve("CONNECTED_TO_HEALTH_API")
             },
             onError:{
-                (error: NSError) in
-                reject("REQUEST_CONNECTION_TO_HEALTH_API_FAILED", "Request connection to Health Api failed.", error)
+                (error: NSError?) in
+                reject("REQUEST_CONNECTION_TO_HEALTH_API_FAILED", "Request connection to Health Api failed.", error!)
             })
     }
     
@@ -45,8 +45,8 @@ class RNHealthApi: RCTBridge {
                 resolve("REQUEST_SUCCESS")
             },
             onError:{
-                (error: NSError) in
-                reject("DISCONNECTED_TO_HEALTH_API_FAILED", "Disconnecting from Health Api failed.", error)
+                (error: NSError?) in
+                reject("DISCONNECTED_TO_HEALTH_API_FAILED", "Disconnecting from Health Api failed.", error!)
             })
     }
 }

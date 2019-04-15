@@ -16,7 +16,7 @@ class HealthKitApi: NSObject {
     @objc func hasPermissionsFor(_ dataTypes: [String], onSuccess completion: @escaping (_ message: String?) -> Void, onError errorHandler: @escaping (_ error: NSError?) -> Void) {
         // HealthKit doesn't have any functionality to check existing permission of particular data types. In this case, we simple call success completion handler
         
-        completion()
+        completion(nil)
     }
     
     @objc func askPermissionsFor(_ dataTypes: [String], onSuccess completion: @escaping (_ message: String?) -> Void, onError errorHandler: @escaping (_ error: NSError?) -> Void) {
@@ -27,14 +27,14 @@ class HealthKitApi: NSObject {
                 
                 guard error == nil, success == true else {
                     errorHandler(NSError(
+                        domain:"Error while requesting permissions!",
                         code:1,
-                        message:"Error while requesting permissions!",
-                        error: error)
+                        userInfo: error as? [String : Any])
                     )
                     return
                 }
                 
-                completion()
+                completion(nil)
             }
             return
         }

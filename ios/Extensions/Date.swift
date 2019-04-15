@@ -17,6 +17,6 @@ extension Date {
         var components = DateComponents()
         components.day = 1
         components.second = -1
-        return Calendar.current.date(byAdding: components, to: startOfDay)
+        return Calendar.current.date(byAdding: components, to: startOfDay)!
     }
 }

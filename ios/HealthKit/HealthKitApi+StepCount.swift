@@ -26,9 +26,9 @@ extension HealthKitApi {
             // Error Check:
             guard error == nil else {
                 errorHandler(NSError(
+                    domain:"Failed to get step count!",
                     code:1,
-                    message:"Failed to get step count!",
-                    error: error)
+                    userInfo: error as? [String : Any])
                 )
                 return
             }
