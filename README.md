@@ -9,6 +9,21 @@
 
 `$ react-native link sdk-template-health-api`
 
+
+### Health provider installation
+
+#### iOS
+
+Due to HealthKit SDK is a primary health provider on iOS, then you need to update `info.plist` in your React Native project:
+
+```
+<key>NSHealthShareUsageDescription</key>
+<string>Read and understand health data.</string>
+<key>NSHealthUpdateUsageDescription</key>
+<string>Share workout data with other apps.</string>
+```
+
+
 ### Manual installation
 
 
