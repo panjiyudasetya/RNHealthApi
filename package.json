@@ -1,17 +1,16 @@
-
 {
   "name": "sdk-template-health-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Health SDK template that compatible with iOS and Android platform.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc"
   },
-  "keywords": [
-    "react-native"
-  ],
-  "author": "",
-  "license": "",
+  "dependencies": {
+    "typescript": "^3.4.3"
+  },
+  "keywords": ["react-native"],
+  "author": "Panji Y. Wiwaha",
+  "license": "UNLICENSED",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
