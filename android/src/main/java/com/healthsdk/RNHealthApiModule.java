@@ -33,7 +33,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         if (requestCode == FitApi.FIT_PERMISSION_REQUEST_CODE) {
             proceedPermissionPairPromises(resultCode == Activity.RESULT_OK);
         }
@@ -43,12 +43,6 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
     public void onHostResume() {
         this.healthApi.setHostActivity(getCurrentActivity());
     }
-
-    @Override
-    public void onHostPause() {}
-
-    @Override
-    public void onHostDestroy() {}
 
     @Override
     public String getName() {
@@ -147,5 +141,23 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
             }
         }
         return converted.toArray(new String[]{});
+    }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        // On particular version, `ActivityEventListener` has `onNewIntent(Intent intent)`
+        // which should be implemented. But for us, just let's leave it empty.
+    }
+
+    @Override
+    public void onHostPause() {
+        // This function is a part of `LifecycleEventListener`.
+        // Leave it empty, we don't need this.
+    }
+
+    @Override
+    public void onHostDestroy() {
+        // This function is a part of `LifecycleEventListener`.
+        // Leave it empty, we don't need this.
     }
 }
