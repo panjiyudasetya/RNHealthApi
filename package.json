@@ -12,6 +12,6 @@
   "author": "Panji Y. Wiwaha",
   "license": "UNLICENSED",
   "peerDependencies": {
-    "react-native": "0.59.4"
+    "react-native": "0.57.8"
   }
 }
