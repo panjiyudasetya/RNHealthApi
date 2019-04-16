@@ -57,4 +57,10 @@ import RNHealthApi from 'sdk-template-health-api';
 // TODO: What to do with the module?
 RNHealthApi;
 ```
-  
+
+
+## Extra Configuration
+
+### Android
+
+In this template, Android Health Api is integrated with Fitness Api and to be able to access Fit Api, you must sign your app and setup your RN App OAuth 2.0 Client ID [here](https://developers.google.com/fit/android/get-api-key).
