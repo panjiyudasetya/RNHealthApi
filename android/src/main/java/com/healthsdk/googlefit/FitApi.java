@@ -50,7 +50,7 @@ public class FitApi extends HealthApi {
             return;
         }
 
-        if (isPlayServiceUpOutOfDate()) {
+        if (isPlayServiceNotAvailable()) {
             callback.onError(new OutOfDatePlayServiceError());
             return;
         }
@@ -141,9 +141,9 @@ public class FitApi extends HealthApi {
         return FitApi.class.getSimpleName();
     }
 
-    private boolean isPlayServiceUpOutOfDate() {
+    private boolean isPlayServiceNotAvailable() {
         GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
         Integer resultCode = googleApiAvailability.isGooglePlayServicesAvailable(context);
-        return resultCode == com.google.android.gms.common.ConnectionResult.SUCCESS;
+        return resultCode != com.google.android.gms.common.ConnectionResult.SUCCESS;
     }
 }
