@@ -10,7 +10,8 @@ import Foundation
 import HealthKit
 
 extension HealthKitApi {
-    @objc func getStepCountToday(onResult completion:@escaping (_ total: Int) -> Void, onError errorHandler: @escaping (_ error: Error?) -> Void) {
+    
+    func getStepCountToday(onResult completion:@escaping (_ total: Int) -> Void, onError errorHandler: @escaping (_ error: Error?) -> Void) {
         
         let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount)!
         let predicate = HKQuery.predicateForSamples(

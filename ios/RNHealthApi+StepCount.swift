@@ -10,15 +10,16 @@ import Foundation
 
 extension RNHealthApi {
     
-    @objc func getStepCountToday(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
+    @objc(getStepCountToday:reject:)
+    func getStepCountToday(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
         healthApi.getStepCountToday(
             onResult: {
                 (value) in
                 resolve(value)
-            },
+        },
             onError: {
                 (error) in
                 reject("FETCH_STEP_COUNT_DATA_ERROR", "Failed to get step count!", error)
-            })
+        })
     }
 }

@@ -9,8 +9,8 @@
 import Foundation
 import HealthKit
 
-@objc(HKPermissionsApi)
 class HKPermissionsApi: NSObject {
+    
     static let quantiyTypes: [String: HKSampleType] = [
         DataType.stepCount: HKObjectType.quantityType(forIdentifier: .stepCount)!,
         DataType.distanceWalkingRunning: HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
