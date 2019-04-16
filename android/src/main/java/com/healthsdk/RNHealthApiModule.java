@@ -30,6 +30,9 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
         super(reactContext);
         this.healthApi = new FitApi(reactContext);
         this.permissionPairPromises = new ArrayList<>();
+        
+        reactContext.addLifecycleEventListener(this);
+        reactContext.addActivityEventListener(this);
     }
 
     @Override
