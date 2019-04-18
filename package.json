@@ -1,7 +1,12 @@
 {
   "name": "sdk-template-health-api",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Health SDK template that compatible with iOS and Android platform.",
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/panjiyudasetya/RNHealthApi.git"
+
+  },
   "scripts": {
     "compile": "tsc"
   },
