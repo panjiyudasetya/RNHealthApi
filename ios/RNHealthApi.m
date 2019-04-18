@@ -10,9 +10,9 @@
 
 @interface RCT_EXTERN_MODULE(RNHealthApi, NSObject)
 
-RCT_EXTERN_METHOD(hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes, resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+RCT_EXTERN_METHOD(hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
 
-RCT_EXTERN_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes, resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+RCT_EXTERN_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
 
 RCT_EXTERN_METHOD(getStepCountToday:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
 
