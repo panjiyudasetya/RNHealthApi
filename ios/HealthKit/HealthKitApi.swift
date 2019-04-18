@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 
-class HealthKitApi: NSObject {
+public class HealthKitApi: NSObject {
     let healthStore = HKHealthStore()
     
     func hasPermissionsFor(_ dataTypes: [String], onSuccess completion: @escaping (_ message: String?) -> Void, onError errorHandler: @escaping (_ error: NSError?) -> Void) {
