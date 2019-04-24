@@ -1,11 +1,16 @@
+//
+//  RNExHealth.h
+//  HealthApiPlayground
+//
+//  Created by Panji Y. Wiwaha on 22/04/19.
+//  Copyright © 2019 Facebook. All rights reserved.
+//
 
-#if __has_include("RCTBridgeModule.h")
-#import "RCTBridgeModule.h"
-#else
+#import "AppleHealthKit.h"
 #import <React/RCTBridgeModule.h>
-#endif
+#import <React/RCTUtils.h>
+#import <React/RCTLog.h>
 
-@interface RNHealthApi : NSObject <RCTBridgeModule>
-
+@interface RNHealthApi : NSObject<RCTBridgeModule>
+@property (strong, nonatomic) AppleHealthKit* healthKit;
 @end
-  

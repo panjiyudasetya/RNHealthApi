@@ -3,11 +3,31 @@
 
 ## Getting started
 
-`$ npm install sdk-template-health-api --save`
+`$ yarn add git+ssh://git@github.com:panjiyudasetya/RNHealthApi.git#[specific_branch]`
 
 ### Mostly automatic installation
 
 `$ react-native link sdk-template-health-api`
+
+
+### Health provider installation
+
+#### iOS
+
+- Due to HealthKit SDK is a primary health provider on iOS, then you need to update `info.plist` in your React Native project:
+
+```
+<key>NSHealthShareUsageDescription</key>
+<string>Read and understand health data.</string>
+<key>NSHealthUpdateUsageDescription</key>
+<string>Share workout data with other apps.</string>
+```
+
+- Enable Health Kit on your Application Capabilities
+
+![image](https://user-images.githubusercontent.com/21379421/56630452-a2367800-667b-11e9-85c3-b972db86b228.png)
+
+- Compile project and Run.
 
 ### Manual installation
 
@@ -42,4 +62,10 @@ import RNHealthApi from 'sdk-template-health-api';
 // TODO: What to do with the module?
 RNHealthApi;
 ```
-  
+
+
+## Extra Configuration
+
+### Android
+
+In this template, Android Health Api is integrated with Fitness Api and to be able to access Fit Api, you must sign your app and setup your RN App OAuth 2.0 Client ID [here](https://developers.google.com/fit/android/get-api-key).

@@ -7,8 +7,130 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNHealthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */; };
+		4817D85D227001DE006B0189 /* AppleHealthKit+Queries.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D850227001DC006B0189 /* AppleHealthKit+Queries.m */; };
+		4817D85E227001DE006B0189 /* RNHealthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D854227001DD006B0189 /* RNHealthApi.m */; };
+		4817D85F227001DE006B0189 /* AppleHealthKit+TypesAndPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D855227001DD006B0189 /* AppleHealthKit+TypesAndPermissions.m */; };
+		4817D860227001DE006B0189 /* AppleHealthKit+StepCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D856227001DD006B0189 /* AppleHealthKit+StepCount.m */; };
+		4817D861227001DE006B0189 /* AppleHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D858227001DD006B0189 /* AppleHealthKit.m */; };
+		4817D862227001DE006B0189 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D85A227001DE006B0189 /* Constants.m */; };
+		482885FE22687EC60011315A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482885DF22687DDB0011315A /* libReact.a */; };
+		4887639D22603DC000FA83EB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4887639C22603DC000FA83EB /* HealthKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		482885DE22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
+			remoteInfo = React;
+		};
+		482885E022687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		482885E222687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C059A1DE3340900C268FA;
+			remoteInfo = yoga;
+		};
+		482885E422687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C06751DE3340C00C268FA;
+			remoteInfo = "yoga-tvOS";
+		};
+		482885E622687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9251DE5FBEC00167DC4;
+			remoteInfo = cxxreact;
+		};
+		482885E822687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+			remoteInfo = "cxxreact-tvOS";
+		};
+		482885EA22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BDC1FC498900052F4D5;
+			remoteInfo = jsinspector;
+		};
+		482885EC22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BFA1FC4989A0052F4D5;
+			remoteInfo = "jsinspector-tvOS";
+		};
+		482885EE22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7ECE1E25DB7D00323FB7;
+			remoteInfo = "third-party";
+		};
+		482885F022687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D3C1EBD27B6005632C8;
+			remoteInfo = "third-party-tvOS";
+		};
+		482885F222687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7E881E25C6D100323FB7;
+			remoteInfo = "double-conversion";
+		};
+		482885F422687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
+			remoteInfo = "double-conversion-tvOS";
+		};
+		482885F622687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC6D6214B3E7000DD5AC8;
+			remoteInfo = jsi;
+		};
+		482885F822687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC73B214B45A300DD5AC8;
+			remoteInfo = jsiexecutor;
+		};
+		482885FA22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FB6214C9A0900B7C4FE;
+			remoteInfo = "jsi-tvOS";
+		};
+		482885FC22687DDB0011315A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 482885CB22687DDB0011315A /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
+			remoteInfo = "jsiexecutor-tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -24,8 +146,20 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNHealthApi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHealthApi.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNHealthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHealthApi.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHealthApi.m; sourceTree = "<group>"; };
+		4817D850227001DC006B0189 /* AppleHealthKit+Queries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppleHealthKit+Queries.m"; sourceTree = "<group>"; };
+		4817D851227001DC006B0189 /* AppleHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleHealthKit.h; sourceTree = "<group>"; };
+		4817D852227001DD006B0189 /* AppleHealthKit+StepCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppleHealthKit+StepCount.h"; sourceTree = "<group>"; };
+		4817D853227001DD006B0189 /* RNHealthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHealthApi.h; sourceTree = "<group>"; };
+		4817D854227001DD006B0189 /* RNHealthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHealthApi.m; sourceTree = "<group>"; };
+		4817D855227001DD006B0189 /* AppleHealthKit+TypesAndPermissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppleHealthKit+TypesAndPermissions.m"; sourceTree = "<group>"; };
+		4817D856227001DD006B0189 /* AppleHealthKit+StepCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppleHealthKit+StepCount.m"; sourceTree = "<group>"; };
+		4817D857227001DD006B0189 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4817D858227001DD006B0189 /* AppleHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleHealthKit.m; sourceTree = "<group>"; };
+		4817D859227001DD006B0189 /* AppleHealthKit+TypesAndPermissions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppleHealthKit+TypesAndPermissions.h"; sourceTree = "<group>"; };
+		4817D85A227001DE006B0189 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		4817D85C227001DE006B0189 /* AppleHealthKit+Queries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppleHealthKit+Queries.h"; sourceTree = "<group>"; };
+		482885CB22687DDB0011315A /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		4887639C22603DC000FA83EB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482885FE22687EC60011315A /* libReact.a in Frameworks */,
+				4887639D22603DC000FA83EB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,12 +183,63 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4817D86322700208006B0189 /* AppleHealth */ = {
+			isa = PBXGroup;
+			children = (
+				4817D851227001DC006B0189 /* AppleHealthKit.h */,
+				4817D858227001DD006B0189 /* AppleHealthKit.m */,
+				4817D85C227001DE006B0189 /* AppleHealthKit+Queries.h */,
+				4817D850227001DC006B0189 /* AppleHealthKit+Queries.m */,
+				4817D852227001DD006B0189 /* AppleHealthKit+StepCount.h */,
+				4817D856227001DD006B0189 /* AppleHealthKit+StepCount.m */,
+				4817D859227001DD006B0189 /* AppleHealthKit+TypesAndPermissions.h */,
+				4817D855227001DD006B0189 /* AppleHealthKit+TypesAndPermissions.m */,
+				4817D857227001DD006B0189 /* Constants.h */,
+				4817D85A227001DE006B0189 /* Constants.m */,
+			);
+			name = AppleHealth;
+			sourceTree = "<group>";
+		};
+		482885CC22687DDB0011315A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				482885DF22687DDB0011315A /* libReact.a */,
+				482885E122687DDB0011315A /* libReact.a */,
+				482885E322687DDB0011315A /* libyoga.a */,
+				482885E522687DDB0011315A /* libyoga.a */,
+				482885E722687DDB0011315A /* libcxxreact.a */,
+				482885E922687DDB0011315A /* libcxxreact.a */,
+				482885EB22687DDB0011315A /* libjsinspector.a */,
+				482885ED22687DDB0011315A /* libjsinspector-tvOS.a */,
+				482885EF22687DDB0011315A /* libthird-party.a */,
+				482885F122687DDB0011315A /* libthird-party.a */,
+				482885F322687DDB0011315A /* libdouble-conversion.a */,
+				482885F522687DDB0011315A /* libdouble-conversion.a */,
+				482885F722687DDB0011315A /* libjsi.a */,
+				482885F922687DDB0011315A /* libjsiexecutor.a */,
+				482885FB22687DDB0011315A /* libjsi-tvOS.a */,
+				482885FD22687DDB0011315A /* libjsiexecutor-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4887639B22603DC000FA83EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				482885CB22687DDB0011315A /* React.xcodeproj */,
+				4887639C22603DC000FA83EB /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNHealthApi.h */,
-				B3E7B5891CC2AC0600A0062D /* RNHealthApi.m */,
+				4817D86322700208006B0189 /* AppleHealth */,
+				4817D853227001DD006B0189 /* RNHealthApi.h */,
+				4817D854227001DD006B0189 /* RNHealthApi.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				4887639B22603DC000FA83EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +274,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -100,6 +288,12 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 482885CC22687DDB0011315A /* Products */;
+					ProjectRef = 482885CB22687DDB0011315A /* React.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNHealthApi */,
@@ -107,12 +301,132 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		482885DF22687DDB0011315A /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 482885DE22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885E122687DDB0011315A /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 482885E022687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885E322687DDB0011315A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 482885E222687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885E522687DDB0011315A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 482885E422687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885E722687DDB0011315A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 482885E622687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885E922687DDB0011315A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 482885E822687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885EB22687DDB0011315A /* libjsinspector.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsinspector.a;
+			remoteRef = 482885EA22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885ED22687DDB0011315A /* libjsinspector-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsinspector-tvOS.a";
+			remoteRef = 482885EC22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885EF22687DDB0011315A /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = 482885EE22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885F122687DDB0011315A /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = 482885F022687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885F322687DDB0011315A /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = 482885F222687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885F522687DDB0011315A /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = 482885F422687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885F722687DDB0011315A /* libjsi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsi.a;
+			remoteRef = 482885F622687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885F922687DDB0011315A /* libjsiexecutor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsiexecutor.a;
+			remoteRef = 482885F822687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885FB22687DDB0011315A /* libjsi-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsi-tvOS.a";
+			remoteRef = 482885FA22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		482885FD22687DDB0011315A /* libjsiexecutor-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsiexecutor-tvOS.a";
+			remoteRef = 482885FC22687DDB0011315A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNHealthApi.m in Sources */,
+				4817D85E227001DE006B0189 /* RNHealthApi.m in Sources */,
+				4817D860227001DE006B0189 /* AppleHealthKit+StepCount.m in Sources */,
+				4817D85F227001DE006B0189 /* AppleHealthKit+TypesAndPermissions.m in Sources */,
+				4817D861227001DE006B0189 /* AppleHealthKit.m in Sources */,
+				4817D85D227001DE006B0189 /* AppleHealthKit+Queries.m in Sources */,
+				4817D862227001DE006B0189 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,32 +517,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNHealthApi;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		58B511F11A9E6C8500147676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNHealthApi;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNHealthApi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNHealthApi;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNHealthApi-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

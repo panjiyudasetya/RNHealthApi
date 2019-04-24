@@ -33,6 +33,7 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
+bin/
 build/
 .idea
 .gradle
@@ -44,3 +45,5 @@ buck-out/
 \.buckd/
 *.keystore
       
+# Generated files
+dist/
