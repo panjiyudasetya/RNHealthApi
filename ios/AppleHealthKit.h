@@ -14,7 +14,6 @@
 
 - (void)hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes completion:(void (^)(BOOL success, NSError * _Nullable error))completion;
 - (void)askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes completion:(void (^)(BOOL success, NSError * _Nullable error))completion;
-- (void)getStepCountToday: (void (^)(double value, NSError* _Nullable error))completion;
 - (void)disconnect: (void (^)(BOOL success, NSError * _Nullable error))completion;
 
 @end

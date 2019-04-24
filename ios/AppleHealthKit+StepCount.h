@@ -10,7 +10,5 @@
 #import <Foundation/Foundation.h>
 
 @interface AppleHealthKit (StepCount)
-- (void)getSumStepCount:(NSDate*)startDate
-                endDate:(NSDate*)endDate
-             completion:(void (^)(double value, NSError* _Nullable error))completion;
+- (void)getStepCountToday: (void (^)(double value, NSError* _Nullable error))completion;
 @end
