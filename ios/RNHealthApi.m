@@ -7,6 +7,7 @@
 //
 
 #import "AppleHealthKit.h"
+#import "AppleHealthKit+StepCount.h"
 #import "RNHealthApi.h"
 #import <Foundation/Foundation.h>
 

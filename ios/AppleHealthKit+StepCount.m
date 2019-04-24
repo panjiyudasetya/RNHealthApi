@@ -15,15 +15,20 @@
 
 @implementation AppleHealthKit (StepCount)
 
-- (void)getSumStepCount:(NSDate*)startDate
-                endDate:(NSDate*)endDate
-             completion:(void (^)(double value, NSError* _Nullable error))completion {
-
-  NSPredicate* queryPredicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictStartDate];
-  [self fetchSumOfSamplesForType:[[self quantityTypes] objectForKey:DTStepCount]
-                                      predicate:queryPredicate
-                                           unit:[[self quantityUnits] objectForKey:DTStepCount]
-                                     completion:completion];
+- (void)getStepCountToday: (void (^)(double value, NSError* _Nullable error))completion {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.day = 1;
+    dateComponents.second = -1;
+    
+    NSDate *startDate = [calendar startOfDayForDate:[NSDate date]];
+    NSDate *endDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:1 toDate:startDate options:0];
+    
+    NSPredicate* queryPredicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictStartDate];
+    [self fetchSumOfSamplesForType:[[self quantityTypes] objectForKey:DTStepCount]
+                         predicate:queryPredicate
+                              unit:[[self quantityUnits] objectForKey:DTStepCount]
+                        completion:completion];
 }
 
 @end
