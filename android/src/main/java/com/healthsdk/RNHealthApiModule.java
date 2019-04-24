@@ -92,7 +92,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
 
             @Override
             public void onError(ExceptionWithCode error) {
-                promise.reject("UNABLE_TO_READ_STEP_COUNT", error);
+                promise.reject("FETCH_STEP_COUNT_DATA_ERROR", error);
             }
         });
     }
@@ -108,7 +108,7 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
 
             @Override
             public void onError(ExceptionWithCode error) {
-                promise.reject("DISCONNECTED_TO_HEALTH_API_FAILED", error);
+                promise.reject("DISCONNECTED_FROM_HEALTH_SERVICES_FAILED", error);
             }
         });
     }
@@ -121,9 +121,9 @@ public class RNHealthApiModule extends ReactContextBaseJavaModule implements Act
             if (promiseKeyValue.first.equals(healthApi.getName())) {
                 completedPromises.add(promiseKeyValue);
                 if (isConnected) {
-                    promiseKeyValue.second.resolve("CONNECTED_TO_HEALTH_API");
+                    promiseKeyValue.second.resolve("CONNECTED_TO_HEALTH_SERVICES");
                 } else {
-                    promiseKeyValue.second.reject("REQUEST_CONNECTION_TO_HEALTH_API_FAILED", error);
+                    promiseKeyValue.second.reject("REQUEST_CONNECTION_TO_HEALTH_SERVICES_FAILED", error);
                 }
             }
         }

@@ -39,7 +39,7 @@ RCT_EXPORT_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes res
     if (success && error == nil) {
       resolve(@"true");
     } else {
-      reject(@"REQUEST_CONNECTION_TO_APPLE_HEALTH_FAILED", @"Request connection to Apple Health failed.", error);
+      reject(@"REQUEST_CONNECTION_TO_HEALTH_SERVICES_FAILED", @"Request connection to Apple Health failed.", error);
     }
   }];
 }
@@ -59,7 +59,7 @@ RCT_EXPORT_METHOD(disconnect:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RC
     if (success && error == nil) {
       resolve(@"true");
     } else {
-      reject(@"DISCONNECTED_TO_HEALTH_API_FAILED", @"Disconnecting from Apple Health failed.", error);
+      reject(@"DISCONNECTED_FROM_HEALTH_SERVICES_FAILED", @"Disconnecting from Health services failed.", error);
     }
   }];
 }

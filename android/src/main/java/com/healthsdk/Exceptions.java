@@ -32,7 +32,7 @@ public class Exceptions {
 
     public static class HealthConnectionRefusedError extends ExceptionWithCode {
         public HealthConnectionRefusedError() {
-            super(1, "Unable to access Health Api. Make sure to ask for particular permission.");
+            super(1, "Unable to access Health services. Make sure to ask for particular permission.");
         }
     }
 
