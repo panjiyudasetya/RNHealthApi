@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install sdk-template-health-api --save`
+`$ yarn add git+ssh://git@github.com:panjiyudasetya/RNHealthApi.git#[specific_branch]`
 
 ### Mostly automatic installation
 
@@ -14,7 +14,7 @@
 
 #### iOS
 
-Due to HealthKit SDK is a primary health provider on iOS, then you need to update `info.plist` in your React Native project:
+- Due to HealthKit SDK is a primary health provider on iOS, then you need to update `info.plist` in your React Native project:
 
 ```
 <key>NSHealthShareUsageDescription</key>
@@ -23,6 +23,11 @@ Due to HealthKit SDK is a primary health provider on iOS, then you need to updat
 <string>Share workout data with other apps.</string>
 ```
 
+- Enable Health Kit on your Application Capabilities
+
+![image](https://user-images.githubusercontent.com/21379421/56630452-a2367800-667b-11e9-85c3-b972db86b228.png)
+
+- Compile project and Run.
 
 ### Manual installation
 
