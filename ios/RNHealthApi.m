@@ -7,10 +7,10 @@
 //
 
 #import "AppleHealthKit.h"
-#import "RNExHealth.h"
+#import "RNHealthApi.h"
 #import <Foundation/Foundation.h>
 
-@implementation RNExHealth
+@implementation RNHealthApi
 
 @synthesize healthKit;
 

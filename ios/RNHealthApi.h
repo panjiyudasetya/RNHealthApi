@@ -11,6 +11,6 @@
 #import <React/RCTUtils.h>
 #import <React/RCTLog.h>
 
-@interface RNExHealth : NSObject<RCTBridgeModule>
+@interface RNHealthApi : NSObject<RCTBridgeModule>
 @property (strong, nonatomic) AppleHealthKit* healthKit;
 @end
