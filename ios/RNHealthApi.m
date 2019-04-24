@@ -1,25 +1,71 @@
 //
-//  RNHealthApi.h
-//  RNHealthApi
+//  RNExHealth.m
+//  HealthApiPlayground
 //
-//  Created by Panji Y. Wiwaha on 12/04/19.
+//  Created by Panji Y. Wiwaha on 22/04/19.
 //  Copyright © 2019 Facebook. All rights reserved.
 //
 
-#import <React/RCTBridgeModule.h>
+#import "AppleHealthKit.h"
+#import "RNExHealth.h"
+#import <Foundation/Foundation.h>
 
-@interface RCT_EXTERN_MODULE(RNHealthApi, NSObject)
+@implementation RNExHealth
 
-RCT_EXTERN_METHOD(hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+@synthesize healthKit;
 
-RCT_EXTERN_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+- (instancetype)init{
+  self = [super init];
+  if (self) {
+    self.healthKit = [[AppleHealthKit alloc] init];
+  }
+  return self;
+}
 
-RCT_EXTERN_METHOD(getStepCountToday:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+RCT_EXPORT_MODULE()
 
-RCT_EXTERN_METHOD(disconnect:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject);
+RCT_EXPORT_METHOD(hasPermissionsFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject) {
+  [healthKit hasPermissionsFor:dataTypes completion:^(BOOL success, NSError *error) {
+    if (success && error == nil) {
+      resolve(@"true");
+    } else {
+      reject(@"PERMISSIONS_ARE_NOT_GRANTED", @"Permission are not granted.", error);
+    }
+  }];
+}
+
+RCT_EXPORT_METHOD(askPermissionFor:(NSArray<NSString *> * _Nonnull)dataTypes resolve:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject) {
+  [healthKit askPermissionFor:dataTypes completion:^(BOOL success, NSError *error) {
+    if (success && error == nil) {
+      resolve(@"true");
+    } else {
+      reject(@"REQUEST_CONNECTION_TO_APPLE_HEALTH_FAILED", @"Request connection to Apple Health failed.", error);
+    }
+  }];
+}
+
+RCT_EXPORT_METHOD(getStepCountToday:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject) {
+  [healthKit getStepCountToday:^(double value, NSError * _Nullable error) {
+    if (error == nil) {
+      resolve(@(@(value).intValue));
+    } else {
+      reject(@"FETCH_STEP_COUNT_DATA_ERROR", @"Failed to get step count!", error);
+    }
+  }];
+}
+
+RCT_EXPORT_METHOD(disconnect:(RCTPromiseResolveBlock _Nonnull)resolve reject:(RCTPromiseRejectBlock _Nonnull)reject) {
+  [healthKit disconnect:^(BOOL success, NSError *error) {
+    if (success && error == nil) {
+      resolve(@"true");
+    } else {
+      reject(@"DISCONNECTED_TO_HEALTH_API_FAILED", @"Disconnecting from Apple Health failed.", error);
+    }
+  }];
+}
 
 + (BOOL) requiresMainQueueSetup {
-    return false;
+  return false;
 }
 
 @end
